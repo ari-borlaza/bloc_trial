@@ -24,12 +24,15 @@ class ConsumerBloc extends StatelessWidget {
             listener: (context, state) {
               if (state.wasIncremented == true) {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    content: Text("+++++"),
-                    duration: Duration(milliseconds: 200)));
+                  content: Text("+++++"),
+                  duration: Duration(milliseconds: 100),
+                ));
               } else if (state.wasIncremented == false) {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    content: Text("----"),
-                    duration: Duration(milliseconds: 200)));
+                  content: Text("----"),
+                  duration: Duration(milliseconds: 100),
+                  dismissDirection: DismissDirection.up,
+                ));
               }
             },
             builder: (context, state) {
