@@ -1,9 +1,8 @@
-import 'package:bloc_trial/view/bloc_consumer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'counter/logic/counter_cubit.dart';
-
+import 'counter/view/bloc_consumer.dart';
 
 void main() {
   runApp(const MyApp());
