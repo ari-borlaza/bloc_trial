@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../logic/logic.dart';
+import '../../logic/logic.dart';
 
 class ConsumerBloc extends StatelessWidget {
   const ConsumerBloc({
     Key? key,
+    this.btncolor,
   }) : super(key: key);
+
+  final Color? btncolor;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,7 @@ class ConsumerBloc extends StatelessWidget {
               }
             },
             builder: (context, state) {
-            if (state.counterValue < 0) {
+              if (state.counterValue < 0) {
                 return Text(
                   'Cons NEG ${state.counterValue}',
                   style: Theme.of(context).textTheme.headline4,
@@ -82,6 +85,11 @@ class ConsumerBloc extends StatelessWidget {
                 child: const Icon(Icons.add),
               ),
             ],
+          ),
+          MaterialButton(
+            onPressed: () {},
+            child: const Text('hi'),
+            color: btncolor,
           )
         ],
       ),

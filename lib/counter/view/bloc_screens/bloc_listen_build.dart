@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../logic/logic.dart';
+import '../../logic/logic.dart';
 
 class ListenBuildBloc extends StatelessWidget {
   const ListenBuildBloc({
