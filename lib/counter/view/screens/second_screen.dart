@@ -1,21 +1,20 @@
-import 'package:bloc_trial/counter/view/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../logic/logic.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key, required this.title, this.color})
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({Key? key, required this.title, this.color})
       : super(key: key);
 
   final String title;
   final Color? color;
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<SecondScreen> createState() => _SecondScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,32 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                          value: /*  BlocProvider.of<CounterCubit>(
-                              context), */
-                              context.read<CounterCubit>(),
-                          child: const SecondScreen(
-                            title: 'Second Screen',
-                            color: Colors.blueAccent,
-                          ))));
-                },
-                child: const Text('Anon Route - 2nd Screen'),
-                color: widget.color,
-              ),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/second');
-                },
-                child: const Text('Named/Generated Route - 2nd Screen'),
-                color: widget.color,
-              ),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/third');
-                },
-                child: const Text('Named/Generated Route - 3rd Screen'),
+                onPressed: () {},
+                child: const Text('hi'),
                 color: widget.color,
               )
             ],

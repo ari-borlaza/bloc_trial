@@ -4,18 +4,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../logic/logic.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key, required this.title, this.color})
+class ThirdScreen extends StatefulWidget {
+  const ThirdScreen({Key? key, required this.title, this.color})
       : super(key: key);
 
   final String title;
   final Color? color;
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ThirdScreen> createState() => _ThirdScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,21 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.blueAccent,
                           ))));
                 },
-                child: const Text('Anon Route - 2nd Screen'),
-                color: widget.color,
-              ),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/second');
-                },
-                child: const Text('Named/Generated Route - 2nd Screen'),
-                color: widget.color,
-              ),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/third');
-                },
-                child: const Text('Named/Generated Route - 3rd Screen'),
+                child: const Text('Go To 2nd Screen'),
                 color: widget.color,
               )
             ],
