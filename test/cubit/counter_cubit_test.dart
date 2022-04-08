@@ -1,4 +1,4 @@
-import 'package:bloc_test/bloc_test.dart';
+/* import 'package:bloc_test/bloc_test.dart';
 import 'package:bloc_trial/counter/logic/logic.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -25,3 +25,4 @@ void main() {
         expect: () => [CounterState(counterValue: 1, wasIncremented: true)]);
   });
 }
+ */

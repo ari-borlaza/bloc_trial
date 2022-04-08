@@ -2,6 +2,7 @@ import 'package:bloc_trial/counter/view/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../constants/enums.dart';
 import '../../logic/logic.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,6 +28,26 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              BlocBuilder<InternetCubit, InternetState>(
+                  builder: (context, state) {
+                if (state is InternetConnected &&
+                    state.connectionType == ConnectionType.wifi) {
+                  return const Text(
+                    'WIFI',
+                  );
+                } else if (state is InternetConnected &&
+                    state.connectionType == ConnectionType.mobile) {
+                  return const Text(
+                    'Mobile',
+                  );
+                } else if (state is InternetDisconnected) {
+                  return const Text(
+                    'Disconnected',
+                  );
+                }
+
+                return const CircularProgressIndicator();
+              }),
               const Text(
                 'Consumer',
               ),
@@ -37,12 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 listener: (context, state) {
                   if (state.wasIncremented == true) {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      content: Text('+++++'),
+                      content: Text('++Increment++'),
                       duration: Duration(milliseconds: 100),
                     ));
                   } else if (state.wasIncremented == false) {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      content: Text('----'),
+                      content: Text('--Decrement--'),
                       duration: Duration(milliseconds: 100),
                       dismissDirection: DismissDirection.up,
                     ));
@@ -77,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                 },
               ),
-              Row(
+              /*            Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FloatingActionButton(
@@ -97,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: const Icon(Icons.add),
                   ),
                 ],
-              ),
+              ), */
               MaterialButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(

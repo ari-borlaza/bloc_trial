@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 
 import '../router/app_route_generated.dart';
 
@@ -42,3 +42,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+ */
